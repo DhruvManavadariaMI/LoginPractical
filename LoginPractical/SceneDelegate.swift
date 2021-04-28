@@ -6,17 +6,31 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 	var window: UIWindow?
-
+	private let disposeBag = DisposeBag()
+	
 
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-		// Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-		// If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-		// This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-		guard let _ = (scene as? UIWindowScene) else { return }
+	
+		UserDefaults.standard.rx.observe(Bool.self, UserDefaultKeys.isLogin).takeUntil(self.rx.deallocating).subscribeOn(MainScheduler.instance).subscribe { (event) in
+			switch event {
+			case .next(let element):
+				if element ?? false {
+					guard let homeVC = HomeViewController.instantiate() else { return }
+					self.setRootController(homeVC)
+				} else {
+					guard let loginVC = LoginViewController.instantiate() else { return }
+					self.setRootController(loginVC)
+				}
+			case .error(_), .completed:
+				break
+			}
+		}.disposed(by: disposeBag)
 	}
 
 	func sceneDidDisconnect(_ scene: UIScene) {
@@ -45,6 +59,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		// Called as the scene transitions from the foreground to the background.
 		// Use this method to save data, release shared resources, and store enough scene-specific state information
 		// to restore the scene back to its current state.
+	}
+	
+	func setRootController(_ contrlloer : UIViewController) {
+		UIApplication.shared.windows.first?.rootViewController = UINavigationController(rootViewController: contrlloer)
+		UIApplication.shared.windows.first?.makeKeyAndVisible()
 	}
 
 

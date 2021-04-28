@@ -14,9 +14,7 @@ extension String {
 	}
 
 	var isValidPassword: Bool {
-		if self.contains(" ") {
-			return false
-		}
+		if self.contains(" ") { return false }
 		let passwordCheck = NSPredicate(format: "SELF MATCHES %@", ValidationType.password.rawValue)
 		return passwordCheck.evaluate(with: self)
 	}

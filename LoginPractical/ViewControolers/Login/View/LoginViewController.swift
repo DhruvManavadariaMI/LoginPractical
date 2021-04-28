@@ -20,9 +20,14 @@ final class LoginViewController: UIViewController {
 	@IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
 	
 	// MARK:- Global Variables -
+	static func instantiate() -> LoginViewController? {
+		return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
+	}
+	
 	private let disposeBag = DisposeBag()
 	private var viewModel: LoginViewModel!
 
+	// MARK:- LifeCycle -
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		initialization()
@@ -35,8 +40,12 @@ extension LoginViewController {
 		self.viewModel = LoginViewModel()
 		bindTextFields()
 		bindViewModel()
-		emailTextField.text = "test@imaginato.com"
-		passwordTextField.text = "Imaginato2020"
+		bindErrorMessageWithLabel()
+	}
+	
+	private func bindErrorMessageWithLabel() {
+		emailErrorLabel.text = ErrorMessage.email
+		passwordErrorLabel.text = ErrorMessage.password
 	}
 	
 	private func bindTextFields() {
@@ -82,14 +91,16 @@ extension LoginViewController {
 				loading ?
 					self.activityIndicator.startAnimating() :
 					self.activityIndicator.stopAnimating()
-				self.loginButton.isUserInteractionEnabled = !loading
+				self.view.isUserInteractionEnabled = !loading
 			})
 			.disposed(by: disposeBag)
 
 		viewModel.showHomePageObservable
 			.takeUntil(rx.deallocating)
 			.subscribe(onNext: { [weak self] (homePage) in
-			
+				if homePage {
+					self?.redirectToHome()
+				}
 			})
 			.disposed(by: disposeBag)
 
@@ -102,17 +113,24 @@ extension LoginViewController {
 					.present(in: self, title: AlertConstant.Error, message: error)
 					.subscribe(onNext: { buttonIndex in
 					}).disposed(by: self.disposeBag)
-
 			})
 			.disposed(by: disposeBag)
-
 	}
-
+	
+	private func redirectToHome() {
+		UserDefaults.standard.setValue(true, forKey: UserDefaultKeys.isLogin)
+	}
+	
+	private func resignTextField() {
+		emailTextField.resignFirstResponder()
+		passwordTextField.resignFirstResponder()
+	}
 }
 
 // MARK:- Action Event -
 extension LoginViewController {
 	@IBAction private func loginButtonClicked() {
+		resignTextField()
 		viewModel.loginButttonTapped()
 	}
 }

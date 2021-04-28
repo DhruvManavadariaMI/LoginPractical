@@ -24,4 +24,10 @@ enum ValidationType: String {
 
 struct UserDefaultKeys {
 	static let user = "User"
+	static let isLogin = "isLogin"
 }
+
+struct StringConstant {
+	static let home = "Home"
+}
+

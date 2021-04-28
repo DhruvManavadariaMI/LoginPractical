@@ -22,6 +22,8 @@
 		686B3EF126398E3C00D1E086 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B3EF026398E3C00D1E086 /* LoginResponse.swift */; };
 		686B3EF426398EE300D1E086 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B3EF326398EE300D1E086 /* ServiceProvider.swift */; };
 		686B3EF726398FD900D1E086 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B3EF626398FD900D1E086 /* Extensions.swift */; };
+		686B3EFE2639978A00D1E086 /* Extension+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B3EFD2639978A00D1E086 /* Extension+UserDefaults.swift */; };
+		686B3F02263997FA00D1E086 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B3F01263997FA00D1E086 /* HomeViewController.swift */; };
 		D7069437BB28D6B0810B399F /* Pods_LoginPractical.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA46624AD1C023AAA127CA5 /* Pods_LoginPractical.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,8 @@
 		686B3EF026398E3C00D1E086 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		686B3EF326398EE300D1E086 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		686B3EF626398FD900D1E086 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		686B3EFD2639978A00D1E086 /* Extension+UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UserDefaults.swift"; sourceTree = "<group>"; };
+		686B3F01263997FA00D1E086 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6FCC85C9DBBD986F980C8C25 /* Pods-LoginPractical.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginPractical.debug.xcconfig"; path = "Target Support Files/Pods-LoginPractical/Pods-LoginPractical.debug.xcconfig"; sourceTree = "<group>"; };
 		EFE9467775C3989B1BEF1E87 /* Pods-LoginPractical.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginPractical.release.xcconfig"; path = "Target Support Files/Pods-LoginPractical/Pods-LoginPractical.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +100,7 @@
 		686B3ED426397DDC00D1E086 /* ViewControolers */ = {
 			isa = PBXGroup;
 			children = (
+				686B3F00263997E400D1E086 /* Home */,
 				686B3ED826397E9400D1E086 /* Login */,
 			);
 			path = ViewControolers;
@@ -168,6 +173,7 @@
 			children = (
 				686B3EE02639846700D1E086 /* Extension+String.swift */,
 				686B3EE72639859D00D1E086 /* Extension+UIAlertController.swift */,
+				686B3EFD2639978A00D1E086 /* Extension+UserDefaults.swift */,
 				686B3EF626398FD900D1E086 /* Extensions.swift */,
 			);
 			path = Extensions;
@@ -179,6 +185,14 @@
 				686B3EE4263984B500D1E086 /* StringContants.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		686B3F00263997E400D1E086 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				686B3F01263997FA00D1E086 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		6C40DCC2487ADE3F095C82D7 /* Frameworks */ = {
@@ -317,8 +331,10 @@
 				686B3EE82639859D00D1E086 /* Extension+UIAlertController.swift in Sources */,
 				686B3EB72639739900D1E086 /* LoginViewController.swift in Sources */,
 				686B3EF126398E3C00D1E086 /* LoginResponse.swift in Sources */,
+				686B3F02263997FA00D1E086 /* HomeViewController.swift in Sources */,
 				686B3EEE26398D6100D1E086 /* LoginModel.swift in Sources */,
 				686B3EB32639739900D1E086 /* AppDelegate.swift in Sources */,
+				686B3EFE2639978A00D1E086 /* Extension+UserDefaults.swift in Sources */,
 				686B3EF726398FD900D1E086 /* Extensions.swift in Sources */,
 				686B3EEB26398CF800D1E086 /* APIRouter.swift in Sources */,
 				686B3EE5263984B500D1E086 /* StringContants.swift in Sources */,

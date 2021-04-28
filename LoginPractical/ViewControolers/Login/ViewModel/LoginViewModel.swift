@@ -38,7 +38,7 @@ final class LoginViewModel {
 	private let email: BehaviorRelay<String> = BehaviorRelay(value: "")
 	private let password: BehaviorRelay<String> = BehaviorRelay(value: "")
 
-	// state
+	// MARK:- state -
 	private let showEmailError = BehaviorRelay<Bool>(value: false)
 	private let showPasswordError = BehaviorRelay<Bool>(value: false)
 	private let enableLoginButton = BehaviorRelay<Bool>(value: false)
@@ -89,8 +89,9 @@ final class LoginViewModel {
 		executeLoginRequest()
 	}
 	
+	// MARK:- Login Api -
 	private func executeLoginRequest() {
-		
+
 		showLoader.accept(true)
 		let loginRequestModel = LoginModel(email: email.value, password: password.value)
 		service.doLogin(.login(loginRequestModel))
@@ -104,6 +105,7 @@ final class LoginViewModel {
 						self.showLoginError.accept(result.errorMessage)
 					} else {
 						self.showHomePage.accept(true)
+						UserDefaults.standard.user = result.data.user
 					}
 				} onError: { [weak self] (error) in
 					guard let self = self else { return }
@@ -112,5 +114,4 @@ final class LoginViewModel {
 				}.disposed(by: self.disposeBag)
 			}
 	}
-
 }
