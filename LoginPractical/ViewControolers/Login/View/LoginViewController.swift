@@ -105,4 +105,12 @@ extension LoginViewController {
 			.disposed(by: disposeBag)
 
 	}
+
+}
+
+// MARK:- Action Event -
+extension LoginViewController {
+	@IBAction private func loginButtonClicked() {
+		viewModel.loginButttonTapped()
+	}
 }

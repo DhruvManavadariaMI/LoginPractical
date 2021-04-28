@@ -17,6 +17,11 @@
 		686B3EE12639846700D1E086 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B3EE02639846700D1E086 /* Extension+String.swift */; };
 		686B3EE5263984B500D1E086 /* StringContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B3EE4263984B500D1E086 /* StringContants.swift */; };
 		686B3EE82639859D00D1E086 /* Extension+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B3EE72639859D00D1E086 /* Extension+UIAlertController.swift */; };
+		686B3EEB26398CF800D1E086 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B3EEA26398CF800D1E086 /* APIRouter.swift */; };
+		686B3EEE26398D6100D1E086 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B3EED26398D6100D1E086 /* LoginModel.swift */; };
+		686B3EF126398E3C00D1E086 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B3EF026398E3C00D1E086 /* LoginResponse.swift */; };
+		686B3EF426398EE300D1E086 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B3EF326398EE300D1E086 /* ServiceProvider.swift */; };
+		686B3EF726398FD900D1E086 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B3EF626398FD900D1E086 /* Extensions.swift */; };
 		D7069437BB28D6B0810B399F /* Pods_LoginPractical.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA46624AD1C023AAA127CA5 /* Pods_LoginPractical.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +39,11 @@
 		686B3EE02639846700D1E086 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		686B3EE4263984B500D1E086 /* StringContants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringContants.swift; sourceTree = "<group>"; };
 		686B3EE72639859D00D1E086 /* Extension+UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIAlertController.swift"; sourceTree = "<group>"; };
+		686B3EEA26398CF800D1E086 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		686B3EED26398D6100D1E086 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		686B3EF026398E3C00D1E086 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		686B3EF326398EE300D1E086 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		686B3EF626398FD900D1E086 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		6FCC85C9DBBD986F980C8C25 /* Pods-LoginPractical.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginPractical.debug.xcconfig"; path = "Target Support Files/Pods-LoginPractical/Pods-LoginPractical.debug.xcconfig"; sourceTree = "<group>"; };
 		EFE9467775C3989B1BEF1E87 /* Pods-LoginPractical.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginPractical.release.xcconfig"; path = "Target Support Files/Pods-LoginPractical/Pods-LoginPractical.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +113,8 @@
 		686B3ED626397E4600D1E086 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				686B3EEA26398CF800D1E086 /* APIRouter.swift */,
+				686B3EF326398EE300D1E086 /* ServiceProvider.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -145,6 +157,8 @@
 		686B3EDB26397EB700D1E086 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				686B3EED26398D6100D1E086 /* LoginModel.swift */,
+				686B3EF026398E3C00D1E086 /* LoginResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -154,6 +168,7 @@
 			children = (
 				686B3EE02639846700D1E086 /* Extension+String.swift */,
 				686B3EE72639859D00D1E086 /* Extension+UIAlertController.swift */,
+				686B3EF626398FD900D1E086 /* Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -301,8 +316,13 @@
 				686B3EDD26397F0F00D1E086 /* LoginViewModel.swift in Sources */,
 				686B3EE82639859D00D1E086 /* Extension+UIAlertController.swift in Sources */,
 				686B3EB72639739900D1E086 /* LoginViewController.swift in Sources */,
+				686B3EF126398E3C00D1E086 /* LoginResponse.swift in Sources */,
+				686B3EEE26398D6100D1E086 /* LoginModel.swift in Sources */,
 				686B3EB32639739900D1E086 /* AppDelegate.swift in Sources */,
+				686B3EF726398FD900D1E086 /* Extensions.swift in Sources */,
+				686B3EEB26398CF800D1E086 /* APIRouter.swift in Sources */,
 				686B3EE5263984B500D1E086 /* StringContants.swift in Sources */,
+				686B3EF426398EE300D1E086 /* ServiceProvider.swift in Sources */,
 				686B3EB52639739900D1E086 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

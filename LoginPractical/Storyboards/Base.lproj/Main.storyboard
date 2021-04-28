@@ -84,6 +84,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginButtonClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="wOz-5F-Wf1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

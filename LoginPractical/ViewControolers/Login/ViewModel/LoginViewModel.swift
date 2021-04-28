@@ -83,5 +83,8 @@ final class LoginViewModel {
 	func onPasswordChanged(_ value: String?) {
 		self.password.accept(value ?? "")
 	}
+	
+	func loginButttonTapped() {
+	}
 
 }
