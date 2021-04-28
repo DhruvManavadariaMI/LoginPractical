@@ -16,21 +16,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	
 
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-	
-		UserDefaults.standard.rx.observe(Bool.self, UserDefaultKeys.isLogin).takeUntil(self.rx.deallocating).subscribeOn(MainScheduler.instance).subscribe { (event) in
-			switch event {
-			case .next(let element):
-				if element ?? false {
-					guard let homeVC = HomeViewController.instantiate() else { return }
-					self.setRootController(homeVC)
-				} else {
-					guard let loginVC = LoginViewController.instantiate() else { return }
-					self.setRootController(loginVC)
+		
+		UserDefaults.standard.rx.observe(Bool.self, UserDefaultKeys.isLogin)
+			.takeUntil(self.rx.deallocating)
+			.subscribeOn(MainScheduler.instance).subscribe { (event) in
+				switch event {
+				case .next(let element):
+					if element ?? false {
+						guard let homeVC = HomeViewController.instantiate() else { return }
+						self.setRootController(homeVC)
+					} else {
+						UserDefaults.standard.removeUserData()
+						guard let loginVC = LoginViewController.instantiate() else { return }
+						self.setRootController(loginVC)
+					}
+				case .error(_), .completed:
+					break
 				}
-			case .error(_), .completed:
-				break
-			}
-		}.disposed(by: disposeBag)
+			}.disposed(by: disposeBag)
 	}
 
 	func sceneDidDisconnect(_ scene: UIScene) {

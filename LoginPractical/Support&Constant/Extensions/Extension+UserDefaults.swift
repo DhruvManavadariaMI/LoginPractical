@@ -19,4 +19,9 @@ extension UserDefaults {
 			UserDefaults.standard.set(newValue?.toDictionary, forKey: UserDefaultKeys.user)
 		}
 	}
+	
+	func removeUserData() {
+		UserDefaults.standard.removeObject(forKey: UserDefaultKeys.user)
+		UserDefaults.standard.synchronize()
+	}
 }
