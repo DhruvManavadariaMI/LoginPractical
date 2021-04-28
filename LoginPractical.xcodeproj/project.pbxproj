@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		686B3EB32639739900D1E086 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B3EB22639739900D1E086 /* AppDelegate.swift */; };
 		686B3EB52639739900D1E086 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B3EB42639739900D1E086 /* SceneDelegate.swift */; };
-		686B3EB72639739900D1E086 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B3EB62639739900D1E086 /* ViewController.swift */; };
+		686B3EB72639739900D1E086 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686B3EB62639739900D1E086 /* LoginViewController.swift */; };
 		686B3EBA2639739900D1E086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 686B3EB82639739900D1E086 /* Main.storyboard */; };
 		686B3EBC2639739B00D1E086 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 686B3EBB2639739B00D1E086 /* Assets.xcassets */; };
 		686B3EBF2639739B00D1E086 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 686B3EBD2639739B00D1E086 /* LaunchScreen.storyboard */; };
@@ -21,7 +21,7 @@
 		686B3EAF2639739900D1E086 /* LoginPractical.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginPractical.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		686B3EB22639739900D1E086 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		686B3EB42639739900D1E086 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		686B3EB62639739900D1E086 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		686B3EB62639739900D1E086 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		686B3EB92639739900D1E086 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		686B3EBB2639739B00D1E086 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		686B3EBE2639739B00D1E086 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 			children = (
 				686B3EB22639739900D1E086 /* AppDelegate.swift */,
 				686B3EB42639739900D1E086 /* SceneDelegate.swift */,
-				686B3EB62639739900D1E086 /* ViewController.swift */,
+				686B3EB62639739900D1E086 /* LoginViewController.swift */,
 				686B3EB82639739900D1E086 /* Main.storyboard */,
 				686B3EBB2639739B00D1E086 /* Assets.xcassets */,
 				686B3EBD2639739B00D1E086 /* LaunchScreen.storyboard */,
@@ -88,7 +88,6 @@
 				6FCC85C9DBBD986F980C8C25 /* Pods-LoginPractical.debug.xcconfig */,
 				EFE9467775C3989B1BEF1E87 /* Pods-LoginPractical.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -206,7 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				686B3EB72639739900D1E086 /* ViewController.swift in Sources */,
+				686B3EB72639739900D1E086 /* LoginViewController.swift in Sources */,
 				686B3EB32639739900D1E086 /* AppDelegate.swift in Sources */,
 				686B3EB52639739900D1E086 /* SceneDelegate.swift in Sources */,
 			);
@@ -358,6 +357,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LoginPractical/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -365,7 +365,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mi.LoginPractical;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -377,6 +377,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LoginPractical/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -384,7 +385,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mi.LoginPractical;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
