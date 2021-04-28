@@ -15,7 +15,7 @@ protocol ServiceProviderProtocol : class {
 }
 
 private let provider = MoyaProvider<APIRouter>()
-final class AuthServices: ServiceProviderProtocol {
+final class ServiceProvider: ServiceProviderProtocol {
 
 	private let disposeBag = DisposeBag()
 

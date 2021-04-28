@@ -35,6 +35,8 @@ extension LoginViewController {
 		self.viewModel = LoginViewModel()
 		bindTextFields()
 		bindViewModel()
+		emailTextField.text = "test@imaginato.com"
+		passwordTextField.text = "Imaginato2020"
 	}
 	
 	private func bindTextFields() {

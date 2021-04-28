@@ -21,3 +21,7 @@ enum ValidationType: String {
 	case email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 	case password = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,16}$"
 }
+
+struct UserDefaultKeys {
+	static let user = "User"
+}

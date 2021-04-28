@@ -13,6 +13,7 @@ final class LoginViewModel {
 
 	// MARK:- Variables -
 	private let disposeBag = DisposeBag()
+	private let service = ServiceProvider()
 	
 	var showEmailErrorObservable: Observable<Bool> {
 		showEmailError.asObservable()
@@ -85,6 +86,31 @@ final class LoginViewModel {
 	}
 	
 	func loginButttonTapped() {
+		executeLoginRequest()
+	}
+	
+	private func executeLoginRequest() {
+		
+		showLoader.accept(true)
+		let loginRequestModel = LoginModel(email: email.value, password: password.value)
+		service.doLogin(.login(loginRequestModel))
+			.asDriver(onErrorJustReturn: LoginResponse())
+			.drive { [weak self] (response)  in
+				guard let self = self else { return }
+				response.subscribe { [weak self] (result) in
+					guard let self = self else { return }
+					self.showLoader.accept(false)
+					if result.result == 0 {
+						self.showLoginError.accept(result.errorMessage)
+					} else {
+						self.showHomePage.accept(true)
+					}
+				} onError: { [weak self] (error) in
+					guard let self = self else { return }
+					self.showLoader.accept(false)
+					self.showLoginError.accept(error.localizedDescription)
+				}.disposed(by: self.disposeBag)
+			}
 	}
 
 }
