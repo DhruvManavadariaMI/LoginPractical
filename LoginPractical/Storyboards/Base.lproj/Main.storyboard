@@ -11,7 +11,7 @@
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="LoginPractical" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="LoginPractical" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,16 +87,30 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Q6e-WO-5jF">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Q6e-WO-5jF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2CG-hU-QWa"/>
+                            <constraint firstItem="Q6e-WO-5jF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bD1-rJ-ekL"/>
                             <constraint firstItem="g6b-EP-WY5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c8C-p2-z8v"/>
                             <constraint firstItem="g6b-EP-WY5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="caL-Pj-eZX"/>
                             <constraint firstItem="g6b-EP-WY5" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.835749" id="uRv-i2-7Yb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="NI1-Vj-Vqf"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Q6e-WO-5jF" id="hnt-7m-4ex"/>
+                        <outlet property="emailErrorLabel" destination="iLr-Z2-DEl" id="cWu-xG-aku"/>
+                        <outlet property="emailTextField" destination="AjO-NE-KdE" id="WHj-3u-WZ0"/>
+                        <outlet property="loginButton" destination="U9C-YC-tW2" id="70C-eW-lGy"/>
+                        <outlet property="passwordErrorLabel" destination="usc-xo-w5Q" id="3Gl-s5-6eA"/>
+                        <outlet property="passwordTextField" destination="2GL-pf-2e6" id="khd-Z4-lGO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
